@@ -43,7 +43,7 @@ class CrystalEnv(BaseEnv):
             observation_space=[self.observation_space],
             action_space=[self.action_space],
         )
-    def reset(self, obs):
+    def reset(self):
         self.t = 0
         self.state = self.random_initial_state()
         return self.state
