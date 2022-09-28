@@ -4,8 +4,8 @@ from hive.envs.env_spec import EnvSpec
 import numpy as np
 
 class CrystalEnv(BaseEnv):
-    def __init__(self, state_size, n_vocab, n_sites, species_ind, 
-                 atom_num_dict, env_name = 'CrystalEnv', **kwargs):
+    def __init__(self, state_size = 219, n_vocab = 10, n_sites = 14, species_ind = None, 
+                 atom_num_dict = None, env_name = 'CrystalEnv', **kwargs):
         
         self.env_name = env_name
         self.state_size = state_size
