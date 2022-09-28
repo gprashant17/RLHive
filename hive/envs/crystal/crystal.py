@@ -46,7 +46,7 @@ class CrystalEnv(BaseEnv):
     def reset(self):
         self.t = 0
         self.state = self.random_initial_state()
-        return self.state
+        return self.state, None
 
     def step(self, action):
 
