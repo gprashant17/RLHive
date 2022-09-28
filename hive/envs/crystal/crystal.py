@@ -51,12 +51,13 @@ class CrystalEnv(BaseEnv):
     def step(self, action):
 
         done = False
-        if self.t < self.n_sites:
+        if self.t < self.n_sites - 1:
             pos1 = 9 + (self.n_vocab + 1 + 3) * self.n_sites + self.t
             self.state[pos1] = 0
             self.state[pos1 + 1] = 1
             pos2 = 9 + (self.n_vocab + 1 + 3) * self.t 
             self.state[pos2 : pos2 + self.n_vocab + 1][action] = 1
+            self.state[pos2 : pos2 + self.n_vocab + 1][-1] = 0
             reward = 0
             self.t += 1
         else:
