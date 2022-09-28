@@ -25,12 +25,17 @@ class CrystalEnv(BaseEnv):
         state = np.zeros(self.state_size)
         return state
 
-    def calc_energy(self, state):
+    def calc_energy(self, state, species, atom_num_dict):
         energy = 0
         return energy
 
-    def calc_reward(self, state):
+    def calc_reward(self, energy):
         reward = 0
+        
+        ### trial
+        reward = np.random.normal(0.0, 1.)
+        ###
+        
         return reward
 
     def create_env_spec(self, env_name, **kwargs):
