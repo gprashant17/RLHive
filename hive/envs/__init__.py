@@ -21,6 +21,11 @@ try:
     from hive.envs.pettingzoo import PettingZooEnv
 except ImportError:
     PettingZooEnv = None
+    
+try:
+    from hive.envs.crystal import CrystalEnv
+except ImportError:
+    CrystalEnv = None
 
 from hive.utils.registry import registry
 
@@ -32,6 +37,7 @@ registry.register_all(
         "MarlGridEnv": MarlGridEnv,
         "AtariEnv": AtariEnv,
         "PettingZooEnv": PettingZooEnv,
+        "CrystalEnv": CrystalEnv
     },
 )
 
