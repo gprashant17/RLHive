@@ -5,7 +5,7 @@ import numpy as np
 
 class CrystalEnv(BaseEnv):
     def __init__(self, state_size = 219, n_vocab = 10, n_sites = 14, species_ind = None, 
-                 atom_num_dict = None, env_name = 'CrystalEnv', **kwargs):
+                 atom_num_dict = None, env_name = 'CrystalEnv', seed = 42, **kwargs):
         
         self.env_name = env_name
         self.state_size = state_size
@@ -18,6 +18,7 @@ class CrystalEnv(BaseEnv):
         self.state = self.random_initial_state()
         self.n_sites = n_sites
         self.t = 0
+        self.seed = seed
         self._env_spec = self.create_env_spec(self.env_name, **kwargs)
 
     def random_initial_state(self):
@@ -69,7 +70,7 @@ class CrystalEnv(BaseEnv):
             done,
             info
         )
-    def seed(self):
-        pass
+    def seed(self, seed = 0):
+        self.seed = seed
     def close(self):
         pass
