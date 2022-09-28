@@ -55,8 +55,8 @@ class CrystalEnv(BaseEnv):
             pos1 = 9 + (self.n_vocab + 1 + 3) * self.n_sites + self.t
             self.state[pos1] = 0
             self.state[pos1 + 1] = 1
-            pos2 = 9 + (self.action_space_n + 1 + 3) * self.t 
-            self.state[pos2 : pos2 + self.action_space_n + 1][action] = 1
+            pos2 = 9 + (self.n_vocab + 1 + 3) * self.t 
+            self.state[pos2 : pos2 + self.n_vocab + 1][action] = 1
             reward = 0
             self.t += 1
         else:
