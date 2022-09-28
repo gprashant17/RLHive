@@ -39,8 +39,8 @@ class CrystalEnv(BaseEnv):
         """
         return EnvSpec(
             env_name=env_name,
-            observation_space=self.observation_space,
-            action_space=list(range(self.action_space.n)),
+            observation_space=[self.observation_space],
+            action_space=[self.action_space],
         )
     def reset(self, obs):
         self.t = 0
