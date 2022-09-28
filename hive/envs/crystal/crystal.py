@@ -68,6 +68,7 @@ class CrystalEnv(BaseEnv):
             self.state, 
             reward,
             done,
+            None,
             info
         )
     def seed(self, seed = 0):
