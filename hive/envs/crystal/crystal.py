@@ -18,7 +18,7 @@ class CrystalEnv(BaseEnv):
         self.state = self.random_initial_state()
         self.n_sites = n_sites
         self.t = 0
-        self.seed = seed
+        self._seed = seed
         self._env_spec = self.create_env_spec(self.env_name, **kwargs)
 
     def random_initial_state(self):
@@ -71,6 +71,6 @@ class CrystalEnv(BaseEnv):
             info
         )
     def seed(self, seed = 0):
-        self.seed = seed
+        self._seed = seed
     def close(self):
         pass
