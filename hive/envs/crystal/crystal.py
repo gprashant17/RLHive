@@ -44,7 +44,7 @@ class CrystalEnv(BaseEnv):
         # Parse CIF File
         self.mat =  cif.CifParser(self.file_name).as_dict()['Cu3P2NO6']
         # Get lattice vector
-        self.lattice = cif.CifParser('data_Cu3P2NO6.cif').get_lattice(mat)
+        self.lattice = cif.CifParser('data_Cu3P2NO6.cif').get_lattice(self.mat)
         self.lat_mat = np.ravel(lattice.matrix)
         self.state = self.random_initial_state()
 
