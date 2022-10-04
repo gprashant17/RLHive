@@ -67,7 +67,7 @@ class CrystalEnv(BaseEnv):
         for i in range(self.n_sites):
             tmp = np.zeros(self.n_vocab + 1)
             tmp[-1] = 1
-            c = np.array([coords_x[i], coords_y[i], coords_z[i]])
+            c = np.array([float(coords_x[i]), float(coords_y[i]), float(coords_z[i])])
             state = np.concatenate([state, tmp, c])
         state = np.concatenate([self.lat_mat, state])
 
