@@ -30,7 +30,6 @@ class CrystalEnv(BaseEnv):
         self.n_sites = n_sites
         self.t = 0
         self._seed = seed
-        self._env_spec = self.create_env_spec(self.env_name, **kwargs)
         self.file_name = file_name
 
         #Action space
@@ -39,6 +38,8 @@ class CrystalEnv(BaseEnv):
         self.observation_space = Box(low = np.array([-np.inf] * self.state_size), high = np.array([np.inf] * self.state_size))
         # Initialize state
         self.state = self.random_initial_state()
+
+        self._env_spec = self.create_env_spec(self.env_name, **kwargs)
 
         ### Temporary ###
         # Parse CIF File
