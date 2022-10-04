@@ -69,7 +69,7 @@ class CrystalEnv(BaseEnv):
             tmp[-1] = 1
             c = np.array([coords_x[i], coords_y[i], coords_z[i]])
             state = np.concatenate([state, tmp, c])
-        state = np.concatenate([lat_mat, state])
+        state = np.concatenate([self.lat_mat, state])
 
         return state
 
