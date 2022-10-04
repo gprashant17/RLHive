@@ -36,7 +36,6 @@ class CrystalEnv(BaseEnv):
         self.action_space = Discrete(self.n_vocab)
         # State space
         self.observation_space = Box(low = np.array([-np.inf] * self.state_size), high = np.array([np.inf] * self.state_size))
-        # Initialize state
 
         self._env_spec = self.create_env_spec(self.env_name, **kwargs)
 
@@ -46,7 +45,9 @@ class CrystalEnv(BaseEnv):
         # Get lattice vector
         self.lattice = cif.CifParser('data_Cu3P2NO6.cif').get_lattice(self.mat)
         self.lat_mat = np.ravel(self.lattice.matrix)
+        # Initialize state
         self.state = self.random_initial_state()
+        print(self.state)
 
     def random_initial_state(self):
         """
@@ -140,6 +141,7 @@ class CrystalEnv(BaseEnv):
             reward = self.calc_reward(self.calc_energy(self.state, self.species_ind, self.atom_num_dict))
 
         info = {}
+        print(self.state)
         return (
             self.state, 
             reward,
