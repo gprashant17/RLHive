@@ -128,7 +128,7 @@ class CrystalEnv(BaseEnv):
         """
 
         done = False
-        if self.t < self.n_sites - 1:
+        if self.t < self.n_sites:
             # Moving pointer by one position
             pos1 = 9 + (self.n_vocab + 1 + 3) * self.n_sites + self.t  
             self.state[pos1] = 0
