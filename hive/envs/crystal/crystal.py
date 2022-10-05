@@ -140,7 +140,7 @@ class CrystalEnv(BaseEnv):
             self.t += 1
         else:
             done = True
-            reward = self.calc_reward(self.calc_energy(self.state, self.species_ind, self.atom_num_dict))
+            reward = self.calc_reward(self.calc_energy(self.state))
 
         info = {}
         # print(self.state)
