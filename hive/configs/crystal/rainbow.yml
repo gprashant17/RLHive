@@ -43,7 +43,7 @@ agent:
         gamma: &gamma .99
         n_step: *n_step
     discount_rate: *gamma
-    reward_clip: None
+    #reward_clip: None
     update_period_schedule:
       name: 'PeriodicSchedule'
       kwargs:
