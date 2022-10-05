@@ -43,7 +43,7 @@ agent:
         gamma: &gamma .99
         n_step: *n_step
     discount_rate: *gamma
-    reward_clip: 1
+    reward_clip: None
     update_period_schedule:
       name: 'PeriodicSchedule'
       kwargs:
@@ -65,8 +65,8 @@ agent:
     test_epsilon: .001
     min_replay_history: 20000
     device: 'cuda'
-    log_frequency: 1000
-    batch_size: 32
+    log_frequency: 10
+    batch_size: 8
     double: False
     distributional: True
     dueling: False
