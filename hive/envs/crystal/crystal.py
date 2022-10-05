@@ -47,7 +47,7 @@ class CrystalEnv(BaseEnv):
         self.lat_mat = np.ravel(self.lattice.matrix)
         # Initialize state
         self.state = self.random_initial_state()
-        print(self.state)
+        # print(self.state)
 
     def random_initial_state(self):
         """
@@ -70,7 +70,9 @@ class CrystalEnv(BaseEnv):
             tmp[-1] = 1
             c = np.array([float(coords_x[i]), float(coords_y[i]), float(coords_z[i])])
             state = np.concatenate([state, tmp, c])
-        state = np.concatenate([self.lat_mat, state])
+        pointer = np.zeros(self.n_sites)
+        pointer[0] = 1
+        state = np.concatenate([self.lat_mat, state, pointer])
 
         return state
 
@@ -141,7 +143,7 @@ class CrystalEnv(BaseEnv):
             reward = self.calc_reward(self.calc_energy(self.state, self.species_ind, self.atom_num_dict))
 
         info = {}
-        print(self.state)
+        # print(self.state)
         return (
             self.state, 
             reward,
