@@ -96,11 +96,11 @@ class CrystalEnv(BaseEnv):
         energy = em.SymmetryModel().get_energy(struct)
         return energy
 
-    def calc_reward(self, energy):
+    def calc_reward(self, energy, thresh = 0):
         """
         Calculate reward using energy
         """
-        ### trial
+        ### trial : reward = energy for the timebeing
         reward = energy
         ###
         
