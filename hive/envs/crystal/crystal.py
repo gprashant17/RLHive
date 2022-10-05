@@ -100,7 +100,7 @@ class CrystalEnv(BaseEnv):
         """
         Calculate reward using energy
         """
-        ### trial : reward = energy for the timebeing
+        ### trial : reward = energy for the time being
         reward = energy
         ###
         
