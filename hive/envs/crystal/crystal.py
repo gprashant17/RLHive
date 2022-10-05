@@ -93,7 +93,7 @@ class CrystalEnv(BaseEnv):
             ele.append(self.species_ind[index])
             coords.append(positions)
         struct = S.Structure(lattice = self.lattice, species = ele, coords = coords)
-        print(lattice, ele, coords)
+        print(self.lattice, ele, coords)
         energy = em.SymmetryModel().get_energy(struct)
         return energy
 
