@@ -132,7 +132,10 @@ class CrystalEnv(BaseEnv):
             # Moving pointer by one position
             pos1 = 9 + (self.n_vocab + 1 + 3) * self.n_sites + self.t  
             self.state[pos1] = 0
-            self.state[pos1 + 1] = 1
+            try:
+                self.state[pos1 + 1] = 1
+            except:
+                pass
             # Updating OHE of element type based on action
             pos2 = 9 + (self.n_vocab + 1 + 3) * self.t 
             self.state[pos2 : pos2 + self.n_vocab + 1][action] = 1
