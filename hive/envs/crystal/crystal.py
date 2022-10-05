@@ -145,6 +145,7 @@ class CrystalEnv(BaseEnv):
         else:
             done = True
             reward = self.calc_reward(self.calc_energy(self.state))
+            print(reward)
 
         info = {}
         # print(self.state)
