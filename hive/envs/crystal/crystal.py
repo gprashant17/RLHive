@@ -88,7 +88,7 @@ class CrystalEnv(BaseEnv):
         for i in range(9, self.state_size - self.n_sites, self.n_vocab + 4):
             predicitons = state[i : i + self.n_vocab]
             # print(predicitons)
-            positions = list(state[i + self.n_vocab + 1 :  + self.n_vocab + 4])
+            positions = list(state[i + self.n_vocab + 1 : i + self.n_vocab + 4])
             index = np.where(predicitons)[0][0]
             ele.append(self.species_ind[index])
             coords.append(positions)
