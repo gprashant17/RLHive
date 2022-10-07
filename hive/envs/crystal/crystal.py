@@ -101,7 +101,7 @@ class CrystalEnv(BaseEnv):
         Calculate reward using energy
         """
         ### trial : reward = energy for the time being
-        reward = energy
+        reward = -energy
         ###
         
         return reward
