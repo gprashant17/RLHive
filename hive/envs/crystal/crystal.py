@@ -113,6 +113,7 @@ class CrystalEnv(BaseEnv):
         k = 0
         for i in range(9, self.state_size - self.n_sites, self.n_vocab + 4):
             predicitons = state[i : i + self.n_vocab]
+            print(predictions, len(predictions))
             index = np.where(predicitons)[0][0]
             reward += int(true_ele[k] == self.species_ind[index])
             k += 1
@@ -154,13 +155,13 @@ class CrystalEnv(BaseEnv):
             self.state[pos2 : pos2 + self.n_vocab + 1][-1] = 0
             reward = 0
             self.t += 1
-            print(self.species_ind[action], end = ', ')
+#             print(self.species_ind[action], end = ', ')
         else:
             done = True
             # reward = self.calc_reward(self.calc_energy(self.state))
             reward = self.proxy_reward(self.state)
-            print()
-            print(reward)
+#             print()
+#             print(reward)
 
 
         info = {}
