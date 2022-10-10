@@ -106,7 +106,7 @@ class CrystalEnv(BaseEnv):
         
         return reward
 
-    def proxy_reward(self):
+    def proxy_reward(self, state):
         true_ele = self.mat['_atom_site_type_symbol']
         pred_ele = []
         reward = 0
@@ -156,7 +156,7 @@ class CrystalEnv(BaseEnv):
         else:
             done = True
             # reward = self.calc_reward(self.calc_energy(self.state))
-            reward = self.proxy_reward()
+            reward = self.proxy_reward(self.state)
             print()
             print(reward)
 
