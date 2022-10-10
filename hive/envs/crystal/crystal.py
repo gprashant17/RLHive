@@ -86,10 +86,10 @@ class CrystalEnv(BaseEnv):
         ele = []
         coords = []
         for i in range(9, self.state_size - self.n_sites, self.n_vocab + 4):
-            predicitons = state[i : i + self.n_vocab]
+            predictions = state[i : i + self.n_vocab]
             # print(predicitons)
             positions = list(state[i + self.n_vocab + 1 : i + self.n_vocab + 4])
-            index = np.where(predicitons)[0][0]
+            index = np.where(predictions)[0][0]
             ele.append(self.species_ind[index])
             coords.append(positions)
         struct = S.Structure(lattice = self.lattice, species = ele, coords = coords)
@@ -112,7 +112,7 @@ class CrystalEnv(BaseEnv):
         reward = 0
         k = 0
         for i in range(9, self.state_size - self.n_sites, self.n_vocab + 4):
-            predicitons = state[i : i + self.n_vocab]
+            predictions = state[i : i + self.n_vocab]
             print(predictions, len(predictions))
             index = np.where(predicitons)[0][0]
             reward += int(true_ele[k] == self.species_ind[index])
