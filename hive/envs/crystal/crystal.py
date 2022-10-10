@@ -100,10 +100,20 @@ class CrystalEnv(BaseEnv):
         """
         Calculate reward using energy
         """
-        ### trial : reward = energy for the time being
-        reward = -energy
+        ### trial : reward = energy for the timebeing
+        reward = energy
         ###
         
+        return reward
+
+    def proxy_reward(self):
+        true_ele = self.mat['_atom_site_type_symbol']
+        pred_ele = []
+        reward = 0
+        for i in range(9, self.state_size - self.n_sites, self.n_vocab + 4):
+            predicitons = state[i : i + self.n_vocab]
+            index = np.where(predicitons)[0][0]
+            reward += int(true_ele[i] == self.species_ind[index])
         return reward
 
     def create_env_spec(self, env_name, **kwargs):
@@ -145,9 +155,11 @@ class CrystalEnv(BaseEnv):
             print(self.species_ind[action], end = ', ')
         else:
             done = True
-            reward = self.calc_reward(self.calc_energy(self.state))
+            # reward = self.calc_reward(self.calc_energy(self.state))
+            reward = self.proxy_reward()
             print()
             print(reward)
+
 
         info = {}
         # print(self.state)
