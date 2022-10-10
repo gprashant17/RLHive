@@ -114,7 +114,7 @@ class CrystalEnv(BaseEnv):
         for i in range(9, self.state_size - self.n_sites, self.n_vocab + 4):
             predicitons = state[i : i + self.n_vocab]
             index = np.where(predicitons)[0][0]
-            reward += int(true_ele[i] == self.species_ind[index])
+            reward += int(true_ele[k] == self.species_ind[index])
             k += 1
         return reward
 
