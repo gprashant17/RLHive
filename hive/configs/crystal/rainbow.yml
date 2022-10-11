@@ -59,9 +59,9 @@ agent:
     epsilon_schedule:
       name: 'LinearSchedule'
       kwargs:
-        init_value: 0.2
+        init_value: 1
         end_value: .01
-        steps: 10000
+        steps: 50000
     test_epsilon: .001
     min_replay_history: 20000
     device: 'cuda'
