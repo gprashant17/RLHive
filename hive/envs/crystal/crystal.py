@@ -155,13 +155,13 @@ class CrystalEnv(BaseEnv):
             self.state[pos2 : pos2 + self.n_vocab + 1][-1] = 0
             reward = 0
             self.t += 1
-#             print(self.species_ind[action], end = ', ')
+            print(self.species_ind[action], end = ', ')
         else:
             done = True
             # reward = self.calc_reward(self.calc_energy(self.state))
             reward = self.proxy_reward(self.state)
-#             print()
-#             print(reward)
+            print()
+            print(reward)
 
 
         info = {}
