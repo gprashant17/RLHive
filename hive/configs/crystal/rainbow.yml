@@ -17,7 +17,7 @@ environment:
     env_name: 'CrystalEnv' 
 
 agent:
-  name: 'DQNAgent'
+  name: 'RainbowDQNAgent'
   kwargs:
     representation_net:
       name: 'MLPNetwork'  
