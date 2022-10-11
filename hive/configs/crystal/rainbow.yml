@@ -57,14 +57,14 @@ agent:
         on_value: True
         period: 8000
     epsilon_schedule:
-      name: 'ConstantSchedule'
+      name: 'LinearSchedule'
       kwargs:
-#         init_value: 1
-          value: 0.2
-#         end_value: .01
-#         steps: 50000
+        init_value: 1
+#           value: 0.2
+        end_value: .01
+        steps: 50000
     test_epsilon: .001
-    min_replay_history: 20000
+    min_replay_history: 100
     device: 'cuda'
     log_frequency: 100
     batch_size: 64
