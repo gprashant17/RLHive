@@ -166,7 +166,7 @@ class CrystalEnv(BaseEnv):
             done = True
             # reward = self.calc_reward(self.calc_energy(self.state))
 #             reward = self.proxy_reward(self.state)
-              reward = 0
+            reward = 0
 #             print()
 #             print(reward)
 
