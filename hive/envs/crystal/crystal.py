@@ -48,6 +48,8 @@ class CrystalEnv(BaseEnv):
         # Initialize state
         self.state = self.random_initial_state()
         # print(self.state)
+        
+        self.ele = self.mat['_atom_site_type_symbol']
 
     def random_initial_state(self):
         """
@@ -155,13 +157,18 @@ class CrystalEnv(BaseEnv):
             self.state[pos2 : pos2 + self.n_vocab + 1][-1] = 0
             reward = 0
             self.t += 1
-            print(self.species_ind[action], end = ', ')
+#             print(self.species_ind[action], end = ', ')
+            if self.species_ind[action] == self.ele[self.t - 1]:
+                reward = 1
+            else:
+                reward = 0
         else:
             done = True
             # reward = self.calc_reward(self.calc_energy(self.state))
-            reward = self.proxy_reward(self.state)
-            print()
-            print(reward)
+#             reward = self.proxy_reward(self.state)
+              reward = 0
+#             print()
+#             print(reward)
 
 
         info = {}
