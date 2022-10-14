@@ -7,7 +7,7 @@ from pymatgen.analysis import energy_models as em
 import pymatgen.io.cif as cif
 
 class CrystalEnv(BaseEnv):
-    def __init__(self, n_vocab = 3, n_sites = 18, species_ind = {0:'Ba', 1:'Mg', 3:'Si'},  #{0:'Cu', 1:'P', 2:'N', 3:'O'}, 
+    def __init__(self, n_vocab = 3, n_sites = 18, species_ind = {0:'Ba', 1:'Mg', 2:'Si'},  #{0:'Cu', 1:'P', 2:'N', 3:'O'}, 
                  atom_num_dict = {}, file_name = 'Ba2Mg3Si4.cif', env_name = 'CrystalEnv', seed = 42, **kwargs):
         """
         Crystal structure environment
