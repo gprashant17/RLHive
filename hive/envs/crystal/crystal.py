@@ -41,7 +41,7 @@ class CrystalEnv(BaseEnv):
 
         ### Temporary ###
         # Parse CIF File
-        self.mat =  cif.CifParser(self.file_name).as_dict()['Cu3P2NO6']
+        self.mat =  cif.CifParser(self.file_name).as_dict()['Ba2Mg3Si4']
         # Get lattice vector
         self.lattice = cif.CifParser('Ba2Mg3Si4.cif').get_lattice(self.mat)
         self.lat_mat = np.ravel(self.lattice.matrix)
