@@ -22,7 +22,7 @@ agent:
     representation_net:
       name: 'MLPNetwork'  
       kwargs:
-        hidden_units: [128, 64]
+        hidden_units: [128, 64, 32]
     optimizer_fn:
       name: 'Adam'
       kwargs:
@@ -67,7 +67,7 @@ agent:
     min_replay_history: 100
     device: 'cuda'
     log_frequency: 100
-    batch_size: 64
+    batch_size: 128
     double: False
     distributional: True
     dueling: False
