@@ -1,6 +1,6 @@
 run_name: &run_name 'crystal-rainbow' 
 train_steps: 10000000
-test_frequency: 100
+test_frequency: 5000
 test_episodes: 10
 max_steps_per_episode: 100
 stack_size: &stack_size 4
