@@ -1,4 +1,4 @@
-run_name: &run_name 'crystal-rainbow-Ba2Mg3Si4' 
+run_name: &run_name 'crystal-rainbow-Cu3P2NO6' 
 train_steps: 10000000
 test_frequency: 5000
 test_episodes: 10
@@ -62,7 +62,7 @@ agent:
         init_value: 1
 #           value: 0.2
         end_value: .01
-        steps: 500000
+        steps: 2500000
     test_epsilon: .001
     min_replay_history: 100
     device: 'cuda'
