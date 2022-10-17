@@ -1,4 +1,4 @@
-run_name: &run_name 'crystal-rainbow' 
+run_name: &run_name 'crystal-rainbow-Ba2Mg3Si4' 
 train_steps: 10000000
 test_frequency: 5000
 test_episodes: 10
