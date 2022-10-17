@@ -7,8 +7,8 @@ from pymatgen.analysis import energy_models as em
 import pymatgen.io.cif as cif
 
 class CrystalEnv(BaseEnv):
-    def __init__(self, n_vocab = 3, n_sites = 18, species_ind = {0:'Ba', 1:'Mg', 2:'Si'},  #{0:'Cu', 1:'P', 2:'N', 3:'O'}, 
-                 atom_num_dict = {}, file_name = 'Ba2Mg3Si4.cif', env_name = 'CrystalEnv', seed = 42, **kwargs):
+    def __init__(self, n_vocab = 4, n_sites = 48, species_ind = {0:'Cu', 1:'P', 2:'N', 3:'O'},  #{0:'Cu', 1:'P', 2:'N', 3:'O'}, 
+                 atom_num_dict = {}, file_name = 'Cu3P2NO6.cif', env_name = 'CrystalEnv', seed = 42, **kwargs):
         """
         Crystal structure environment
 
@@ -41,9 +41,9 @@ class CrystalEnv(BaseEnv):
 
         ### Temporary ###
         # Parse CIF File
-        self.mat =  cif.CifParser(self.file_name).as_dict()['Ba2Mg3Si4']
+        self.mat =  cif.CifParser(self.file_name).as_dict()['Cu3P2NO6']
         # Get lattice vector
-        self.lattice = cif.CifParser('Ba2Mg3Si4.cif').get_lattice(self.mat)
+        self.lattice = cif.CifParser('Cu3P2NO6.cif').get_lattice(self.mat)
         self.lat_mat = np.ravel(self.lattice.matrix)
         # Initialize state
         self.state = self.random_initial_state()
